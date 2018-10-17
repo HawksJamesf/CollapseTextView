@@ -1,0 +1,55 @@
+import proguard.gradle.ProGuardTask
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from:'../script/common.gradle'
+//apply from: '../maven_push.gradle'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+}
+
+task makeJar(type: ProGuardTask, dependsOn: "build") {
+    // 未混淆的jar
+    injars 'build/intermediates/bundles/release/classes.jar'
+    // 混淆后的jar路径
+    outjars 'build/CollapseTestView-1.0.jar'
+    // 具体需要keep住的类
+    configuration 'proguard-rules.pro'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api ('com.vanniktech:emoji-ios:0.5.1') {
+        exclude group: 'com.android.support', module: 'cardview-v7'
+    }
+}
+repositories {
+    mavenCentral()
+}

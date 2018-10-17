@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.hawksjamesf.library.CollapseTextView.Presenter"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.vanniktech.emoji.EmojiTextView
+            android:id="@+id/etv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:lineSpacingExtra="1dp"
+            android:lineSpacingMultiplier="1.2"
+            />
+
+        <TextView
+            android:id="@+id/tv_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="@{presenter::onCollapse}"
+            android:textColor="#5A86FF"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            tools:text="展开"
+            />
+    </LinearLayout>
+</layout>
