@@ -35,22 +35,49 @@ buildscript {
         hamcrestVersion = '1.3'
     }
     repositories {
+        //https://dl.google.com/dl/android/maven2/
         google()
+        //https://jcenter.bintray.com/
         jcenter()
+        //https://repo.maven.apache.org/maven2/
+        mavenCentral()
+        mavenLocal()
+//        ivy {
+//            url ''
+//        }
+//        maven {
+//            url ''
+//            url 'https://jitpack.io'
+//        }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.0-alpha10'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
     }
 }
 
 allprojects {
     repositories {
+        //https://dl.google.com/dl/android/maven2/
         google()
+        //https://jcenter.bintray.com/
         jcenter()
-        maven {url "http://nexus.hawksjamesf.com/repository/maven-public/" }
+        //https://repo.maven.apache.org/maven2/
+        mavenCentral()
+        mavenLocal()
+//        ivy {
+//            url ''
+//        }
+//        maven {
+//            url ''
+//            url 'https://jitpack.io'
+//            url "http://nexus.hawksjamesf.com/repository/maven-public/"
+//        }
     }
 }
 

@@ -1,0 +1,84 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = POM_GROUP_ID
+version = VERSION_NAME
+archivesBaseName = 'gradle'
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+//            groupId = POM_GROUP_ID
+            artifactId = POM_ARTIFACT_ID
+//            version = VERSION_NAME
+
+            project {
+                name POM_NAME
+                packaging POM_PACKAGING
+                description POM_DESCRIPTION
+                url POM_URL //项目主页
+
+                licenses {
+                    license {
+                        name POM_LICENCE_NAME
+                        url POM_LICENCE_URL
+                        distribution POM_LICENCE_DIST
+                    }
+                }
+                developers {
+                    developer {
+                        id POM_DEVELOPER_ID
+                        name POM_DEVELOPER_NAME
+                        email POM_DEVELOPER_EMAIL
+                    }
+                }
+                scm {
+                    url POM_SCM_URL
+                    connection POM_SCM_CONNECTION //git仓库的url
+                    developerConnection POM_SCM_DEV_CONNECTION //git仓库的url
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+//    from sourceSets.main.allJava
+    from android.sourceSets.main.java.sourceFiles
+    classifier = 'sources'
+}
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from groovydoc.destinationDir
+//}
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.sourceFiles
+}
+
+task androidJavadocsJar(type: Jar) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+artifacts {
+    //archives javadocJar
+    archives sourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+    configurations = ['archives']
+    pkg {
+        userOrg="makeyouflying"
+        repo = "maven"
+        name = "${POM_GROUP_ID}:${POM_ARTIFACT_ID}"    //发布到JCenter上的项目名字
+        websiteUrl = POM_URL
+        vcsUrl = POM_SCM_URL
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+
+}

@@ -1,0 +1,95 @@
+//This chapter describes deploying artifacts to Maven repositories using the original publishing mechanism available in Gradle 1.0: in Gradle 1.3 a new mechanism for publishing was introduced
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+def mavenRepositoryUrl
+if (isReleaseBuild()) {
+    println 'RELEASE BUILD'
+    // Releases 仓库
+    mavenRepositoryUrl = hasProperty('RELEASE_REPOSITORY_URL') ? RELEASE_REPOSITORY_URL
+            : "http://nexus.kaikaibao.com/repository/maven-releases/"
+} else {
+    println 'SNAPSHOTS BUILD'
+    // snapshots 仓库
+    mavenRepositoryUrl = hasProperty('SNAPSHOT_REPOSITORY_URL') ? SNAPSHOT_REPOSITORY_URL
+            : "http://nexus.kaikaibao.com/repository/maven-snapshots/"
+}
+
+def getRepositoryUsername() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}
+def isReleaseBuild() {
+    return !VERSION_NAME.contains("SNAPSHOT")
+}
+
+uploadArchives.repositories.mavenDeployer {
+    beforeDeployment {
+        MavenDeployment deployment -> signing.signPom(deployment)
+    }
+
+    repository(url: mavenRepositoryUrl) {
+        authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+    }
+
+    pom {
+        // compile com.squareup.okhttp:okhttp:2.7.0
+        // compile {groupId}:{artifactId}:{version}
+        artifactId = POM_ARTIFACT_ID
+        groupId = POM_GROUP_ID
+        version = VERSION_NAME
+
+        project {
+            name POM_NAME
+            packaging POM_PACKAGING
+            description POM_DESCRIPTION
+            url POM_URL
+
+            scm {
+                url POM_URL
+                connection POM_SCM_CONNECTION
+                developerConnection POM_SCM_DEV_CONNECTION
+            }
+
+            licenses {
+                license {
+                    name POM_LICENCE_NAME
+                    url POM_LICENCE_URL
+                    distribution POM_LICENCE_DIST
+                }
+            }
+
+            developers {
+                developer {
+                    id POM_DEVELOPER_ID
+                    name POM_DEVELOPER_NAME
+                    email POM_DEVELOPER_EMAIL
+                }
+            }
+        }
+    }.writeTo("$buildDir/newPom.xml")
+}
+
+signing {
+    required { isReleaseBuild() && gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allJava
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from groovydoc.destinationDir
+}
+
+
+artifacts {
+//        archives androidSourcesJar
+        archives sourcesJar
+}
