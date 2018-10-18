@@ -40,8 +40,8 @@ buildscript {
         //https://jcenter.bintray.com/
         jcenter()
         //https://repo.maven.apache.org/maven2/
-        mavenCentral()
-        mavenLocal()
+//        mavenCentral()
+//        mavenLocal()
 //        ivy {
 //            url ''
 //        }
@@ -68,8 +68,8 @@ allprojects {
         //https://jcenter.bintray.com/
         jcenter()
         //https://repo.maven.apache.org/maven2/
-        mavenCentral()
-        mavenLocal()
+//        mavenCentral()
+//        mavenLocal()
 //        ivy {
 //            url ''
 //        }

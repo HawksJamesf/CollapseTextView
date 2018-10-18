@@ -40,7 +40,7 @@ dependencies {
     */
 //    api 'com.google.android.material:material:1.0.0'
 
-//    api "com.android.support:support-emoji:${rootProject.ext.supportLibraryVersion}"
+    api "com.android.support:support-emoji:${rootProject.ext.supportLibraryVersion}"
 
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
 

@@ -36,7 +36,7 @@ dependencies {
 //    implementation project(path: ':library')
     implementation 'com.hawksjamesf.library:collapsetextview:1.0.0'
     kapt "com.android.databinding:compiler:${databinding}"
-    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
-    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
+    kapt "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
+    kapt "android.arch.persistence.room:compiler:1.1.1"
 
 }
