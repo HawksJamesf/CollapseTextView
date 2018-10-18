@@ -65,20 +65,36 @@ artifacts {
     archives sourcesJar
 }
 
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+def getUserAndKey() {
+    if (project.hasProperty("BINTRAY_USER") && project.hasProperty("BINTRAY_APIKEY")) {//used for ci
+        /*
+        bintrayUser和bintrayApikey变量均来自于构建环境,使用--project-prop或者-P都可以传参
+        ./gradlew assemble/bintrayUpload -PBINTRAY_USER=nihao --project-prop BINTRAY_APIKEY='safasfsadf'
+         */
+        [project.property("BINTRAY_USER"), project.property("BINTRAY_APIKEY")]
+    } else {//used for local build
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        [properties.getProperty("BINTRAY_USER"), properties.getProperty("BINTRAY_APIKEY")]
+
+    }
+}
+//def (user1, key1) = getUserAndKey()
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    (user, key) = getUserAndKey()
+//    user=user1
+//    key=key1
+    println("bintray user:${user}\nbintray Apikey:${key}")
     configurations = ['archives']
     pkg {
-        userOrg="makeyouflying"
+        userOrg = "makeyouflying"
         repo = "maven"
         name = "${POM_GROUP_ID}:${POM_ARTIFACT_ID}"    //发布到JCenter上的项目名字
         websiteUrl = POM_URL
         vcsUrl = POM_SCM_URL
         licenses = ["Apache-2.0"]
-        publish = true
+        publish = false
     }
 
 }

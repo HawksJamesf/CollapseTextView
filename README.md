@@ -6,9 +6,9 @@
 
 script:
 - common.gradle：通用开发者库
-- jfrog_maven_push.gradle：上传到jfrog bintray
-- nexus_maven_push.gradle: 上传到nexus
-
+- push_jfrog_maven.gradle：上传到jfrog bintray
+- push_nexus_maven.gradle: 上传到nexus
+- maven_push.sh:当本地版本更新，会自动上传library库到maven
 ## add dependencies
 ```xml
 <dependency>

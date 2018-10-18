@@ -2,9 +2,6 @@ package com.hawksjamesf.collapsetextview;
 
 import android.app.Application;
 
-import com.vanniktech.emoji.EmojiManager;
-import com.vanniktech.emoji.ios.IosEmojiProvider;
-
 /**
  * Copyright ® $ 2017
  * All right reserved.

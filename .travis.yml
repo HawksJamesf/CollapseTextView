@@ -4,9 +4,9 @@ android:
     - tools
     - platform-tools
     - build-tools-28.0.2
-    - android-23
-    - android-26
-    - android-17
+#    - android-23
+#    - android-26
+#    - android-17
     - android-28
     - extra-android-m2repository
     - extra-google-m2repository
@@ -19,10 +19,13 @@ install: echo "install"
 before_script: echo "before_script"
 script:
   - echo "build the script"
-  - ./gradlew assemble
+  #使用--project-prop或者-P都可以传参
+  - ./gradlew assemble -PBINTRAY_USER=$BINTRAY_USER --project-prop BINTRAY_APIKEY=$BINTRAY_APIKEY
 
 after_success:
   - echo "after_success"
+  - ./script/push_jfrog_maven.sh `pwd` $BINTRAY_USER $BINTRAY_APIKEY
+
 after_failure:
   - echo "after_failure"
 before_deploy:

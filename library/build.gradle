@@ -6,8 +6,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 apply from:'../script/common.gradle'
-apply from: '../script/jfrog_maven_push.gradle'
-//apply from: '../script/nexus_maven_push.gradle'
+apply from: '../script/push_jfrog_maven.gradle'
+//apply from: '../script/push_nexus_maven.gradle'
 
 android {
     compileSdkVersion 28
