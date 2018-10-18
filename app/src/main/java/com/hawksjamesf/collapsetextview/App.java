@@ -16,6 +16,6 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        EmojiManager.install(new IosEmojiProvider());
+//        EmojiManager.install(new IosEmojiProvider());
     }
 }

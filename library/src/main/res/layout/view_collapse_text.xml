@@ -18,7 +18,7 @@
         android:orientation="vertical"
         >
 
-        <com.vanniktech.emoji.EmojiTextView
+        <androidx.emoji.widget.EmojiTextView
             android:id="@+id/etv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

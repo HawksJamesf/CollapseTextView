@@ -47,7 +47,11 @@ task makeJar(type: ProGuardTask, dependsOn: "build") {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api ('com.vanniktech:emoji-ios:0.5.1') {
-        exclude group: 'com.android.support', module: 'cardview-v7'
-    }
+//    api ('com.vanniktech:emoji-ios:0.5.1') {
+//        exclude group: 'com.android.support', module: 'cardview-v7'
+//    }
+//
+//    implementation 'com.vanniktech:emoji-one:0.6.0'
+//    implementation 'com.vanniktech:emoji-google:0.6.0'
+//    implementation 'com.vanniktech:emoji-twitter:0.6.0'
 }
