@@ -44,7 +44,7 @@ class CollapseTextView : FrameLayout {
         var i: Int = 0
 
         @JvmStatic
-        @BindingAdapter(value = "collapseText")
+        @BindingAdapter(value = ["collapseText"])
         fun setCollapseText(ctv: CollapseTextView?, text: String?) {
             ctv?.setCollapseText(text)
         }

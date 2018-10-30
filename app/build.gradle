@@ -1,22 +1,23 @@
 apply plugin: 'com.android.application'
 
 
-apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-kapt'
+
+apply plugin: 'realm-android'
 
 apply from: '../script/common.gradle'
 
-def getVersion() {
-    [1, "1.0",24,28]
+static def getVersion() {
+    [1, "1.0", 24, 28]
 }
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.hawksjamesf.collapsetextview"
-        (versionCode, versionName,minSdkVersion,targetSdkVersion) = getVersion()
+        (versionCode, versionName, minSdkVersion, targetSdkVersion) = getVersion()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -35,9 +36,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(path: ':library')
+    implementation project(path: ':adapter')
 //    implementation 'com.hawksjamesf.library:collapsetextview:1.0.0'
-    kapt "com.android.databinding:compiler:${databinding}"
-    kapt "com.google.dagger:dagger-compiler:${rootProject.ext.daggerVersion}"
-    kapt "android.arch.persistence.room:compiler:1.1.1"
-
 }

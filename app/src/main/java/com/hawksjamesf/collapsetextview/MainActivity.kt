@@ -5,15 +5,37 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.github.markzhai.recyclerview.SingleTypeAdapter
 import com.google.android.material.snackbar.Snackbar
 import com.hawksjamesf.collapsetextview.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    val list = arrayListOf(
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n",
+            "hello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\nhello world\n")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
+        val databinding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
         setSupportActionBar(toolbar)
 
@@ -21,6 +43,12 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+        val singleTypeAdapter = SingleTypeAdapter<String>(this, R.layout.item_content)
+        rv.adapter = singleTypeAdapter
+        val lm = LinearLayoutManager(this)
+        rv.layoutManager = lm
+        rv.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
+        singleTypeAdapter.addAll(list)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

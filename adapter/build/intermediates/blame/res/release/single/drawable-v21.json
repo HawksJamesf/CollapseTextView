@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/ad2840d319996c224a49d8fc8253fbcc/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/ad2840d319996c224a49d8fc8253fbcc/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/design_bottom_navigation_item_background.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b97963e30738fff1c32cf830dc5a5318/res/drawable-v21/design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/avd_hide_password.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b97963e30738fff1c32cf830dc5a5318/res/drawable-v21/avd_hide_password.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/ad2840d319996c224a49d8fc8253fbcc/res/drawable-v21/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/avd_show_password.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b97963e30738fff1c32cf830dc5a5318/res/drawable-v21/avd_show_password.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/abc_list_divider_material.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/ad2840d319996c224a49d8fc8253fbcc/res/drawable-v21/abc_list_divider_material.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/notification_action_background.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/core-1.0.0.aar/b6f183d56f2e33b633b9240b4ce77bb6/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/abc_dialog_material_background.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.0.aar/ad2840d319996c224a49d8fc8253fbcc/res/drawable-v21/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/hawks.jamesf/AndroidStudioProjects/work-project/CollapseTextView/adapter/build/intermediates/res/merged/release/drawable-v21/design_password_eye.xml",
+        "source": "/Users/hawks.jamesf/.gradle/caches/transforms-1/files-1.1/material-1.0.0-rc01.aar/b97963e30738fff1c32cf830dc5a5318/res/drawable-v21/design_password_eye.xml"
+    }
+]

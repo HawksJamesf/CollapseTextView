@@ -19,3 +19,5 @@ script:
 </dependency>
 ```
 ```compile 'com.hawksjamesf.library:collapsetextview:1.0.0'```
+
+![](art/device-2018-10-30-181836.png)
