@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/HawksJamesf/CollapseTextView.svg?branch=master)](https://travis-ci.org/HawksJamesf/CollapseTextView)  [![Download](https://api.bintray.com/packages/makeyouflying/maven/com.hawksjamesf.library%3Acollapsetextview/images/download.svg) ](https://bintray.com/makeyouflying/maven/com.hawksjamesf.library%3Acollapsetextview/_latestVersion)
+[![Build Status](https://travis-ci.com/HawksJamesf/CollapseTextView.svg?branch=master)](https://travis-ci.com/HawksJamesf/CollapseTextView)  [![Download](https://api.bintray.com/packages/makeyouflying/maven/com.hawksjamesf.library%3Acollapsetextview/images/download.svg) ](https://bintray.com/makeyouflying/maven/com.hawksjamesf.library%3Acollapsetextview/_latestVersion)
 
 <a href='https://bintray.com/makeyouflying/maven/com.hawksjamesf.library%3Acollapsetextview?source=watch' alt='Get automatic notifications about new "com.hawksjamesf.library:collapsetextview" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_color.png'></a>
 
