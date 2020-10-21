@@ -50,18 +50,15 @@ class CollapseTextView : FrameLayout {
         }
     }
 
-    constructor(context: Context?) : this(context, null)
-    constructor(context: Context?, attrs: AttributeSet?) : super(context, attrs) {
+    constructor(context: Context) : this(context, null)
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
         initComponent(attrs)
     }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         initComponent(attrs)
     }
 
-    constructor(context: Context?, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
-        initComponent(attrs)
-    }
 
     private fun initComponent(attrs: AttributeSet?) {
         mBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.view_collapse_text, this, true)

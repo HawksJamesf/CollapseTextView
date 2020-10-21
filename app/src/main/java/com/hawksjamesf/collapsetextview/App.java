@@ -2,8 +2,6 @@ package com.hawksjamesf.collapsetextview;
 
 import android.app.Application;
 
-import com.orhanobut.logger.Logger;
-
 import androidx.annotation.Nullable;
 import androidx.core.provider.FontRequest;
 import androidx.emoji.bundled.BundledEmojiCompatConfig;
@@ -44,13 +42,11 @@ public class App extends Application {
                     @Override
                     public void onInitialized() {
                         super.onInitialized();
-                        Logger.t("App").d("initialized");
                     }
 
                     @Override
                     public void onFailed(@Nullable Throwable throwable) {
                         super.onFailed(throwable);
-                        Logger.t("App").d("failed");
                     }
                 });
 
