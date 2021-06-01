@@ -1,4 +1,4 @@
-package com.hawksjamesf.library
+package jamesfchen.widget.collapsetext
 
 import android.content.Context
 import android.text.TextUtils
@@ -11,7 +11,8 @@ import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
-import com.hawksjamesf.library.databinding.ViewCollapseTextBinding
+import jamesfchen.widget.R
+import jamesfchen.widget.databinding.ViewCollapseTextBinding
 
 
 class CollapseTextView : FrameLayout {

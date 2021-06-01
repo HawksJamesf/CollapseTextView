@@ -19,7 +19,7 @@
         tools:context=".MainActivity"
         tools:showIn="@layout/activity_main">
 
-        <com.hawksjamesf.library.CollapseTextView
+        <jamesfchen.widget.collapsetext.CollapseTextView
             collapseText="@{item}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

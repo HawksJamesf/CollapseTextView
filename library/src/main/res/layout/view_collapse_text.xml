@@ -8,7 +8,7 @@
 
         <variable
             name="presenter"
-            type="com.hawksjamesf.library.CollapseTextView.Presenter"/>
+            type="jamesfchen.widget.collapsetext.CollapseTextView"/>
     </data>
 
     <LinearLayout
