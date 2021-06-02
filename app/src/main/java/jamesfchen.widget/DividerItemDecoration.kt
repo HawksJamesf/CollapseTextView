@@ -1,5 +1,6 @@
-package com.hawksjamesf.collapsetextview
+package jamesfchen.widget
 
+import android.R
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Rect
@@ -23,7 +24,7 @@ class DividerItemDecoration(
     companion object {
         const val HORIZONTAL = LinearLayout.HORIZONTAL
         const val VERTICAL = LinearLayout.VERTICAL
-        private val ATTRS = intArrayOf(android.R.attr.listDivider)
+        private val ATTRS = intArrayOf(R.attr.listDivider)
     }
 
     private val mDivider: Drawable?

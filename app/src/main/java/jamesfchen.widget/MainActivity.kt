@@ -1,4 +1,4 @@
-package com.hawksjamesf.collapsetextview
+package jamesfchen.widget
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.markzhai.recyclerview.SingleTypeAdapter
 import com.google.android.material.snackbar.Snackbar
-import com.hawksjamesf.collapsetextview.databinding.ActivityMainBinding
+import jamesfchen.widget.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         rv.adapter = singleTypeAdapter
         val lm = LinearLayoutManager(this)
         rv.layoutManager = lm
-        rv.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
+        rv.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         singleTypeAdapter.addAll(list)
     }
 

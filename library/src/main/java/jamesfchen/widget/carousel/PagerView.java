@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.jamesfchen.uicomponent.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
+
+import jamesfchen.widget.R;
 
 /**
  * Copyright ® $ 2019

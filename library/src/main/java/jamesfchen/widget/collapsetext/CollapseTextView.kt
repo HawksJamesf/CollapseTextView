@@ -1,4 +1,4 @@
-package com.hawksjamesf.library
+package jamesfchen.widget.collapsetext
 
 import android.content.Context
 import android.text.TextUtils
@@ -11,8 +11,8 @@ import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import androidx.databinding.DataBindingUtil
-import com.hawksjamesf.library.databinding.ViewCollapseTextBinding
-
+import jamesfchen.widget.R
+import jamesfchen.widget.databinding.ViewCollapseTextBinding
 
 class CollapseTextView : FrameLayout {
     private lateinit var mBinding: ViewCollapseTextBinding
@@ -55,13 +55,22 @@ class CollapseTextView : FrameLayout {
         initComponent(attrs)
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         initComponent(attrs)
     }
 
 
     private fun initComponent(attrs: AttributeSet?) {
-        mBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.view_collapse_text, this, true)
+        mBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(context),
+            R.layout.view_collapse_text,
+            this,
+            true
+        )
         mBinding.presenter = Presenter()
         val ta = context.obtainStyledAttributes(attrs, R.styleable.CollapseTextView)
         isCollapsed = ta.getBoolean(R.styleable.CollapseTextView_collapsed, true)
@@ -69,7 +78,10 @@ class CollapseTextView : FrameLayout {
         contentMaxLine = ta.getInteger(R.styleable.CollapseTextView_contentMaxLine, 6)
         content = ta.getString(R.styleable.CollapseTextView_collapseText)
         textSize = ta.getFloat(R.styleable.CollapseTextView_collapseTextSize, 15f)
-        textColor = ta.getColor(R.styleable.CollapseTextView_collapseTextColor, ContextCompat.getColor(context, R.color.b44))
+        textColor = ta.getColor(
+            R.styleable.CollapseTextView_collapseTextColor,
+            ContextCompat.getColor(context, R.color.b44)
+        )
         ta.recycle()
         ++i
     }
@@ -145,13 +157,15 @@ class CollapseTextView : FrameLayout {
                 }
                 state = COLLPASED
             } else {
-                deltaValue = mBinding.etvContent.lineHeight * mBinding.etvContent.lineCount - startValue
+                deltaValue =
+                    mBinding.etvContent.lineHeight * mBinding.etvContent.lineCount - startValue
                 mBinding.tvCollapse.text = collapse
 
 
                 val contentAnimation = object : Animation() {
                     override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
-                        mBinding.etvContent.height = (startValue + deltaValue * interpolatedTime).toInt()
+                        mBinding.etvContent.height =
+                            (startValue + deltaValue * interpolatedTime).toInt()
                     }
                 }
                 contentAnimation.duration = DURATION_MILLIS

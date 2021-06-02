@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import java.util.List;
 
 import androidx.databinding.library.baseAdapters.BR;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Base Data Binding RecyclerView Adapter.

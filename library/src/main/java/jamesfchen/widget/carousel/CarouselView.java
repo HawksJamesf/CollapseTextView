@@ -12,11 +12,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.jamesfchen.uicomponent.R;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
+
+import jamesfchen.widget.R;
 import jamesfchen.widget.carousel.adapter.CarouselPagerAdapter;
 
 /**

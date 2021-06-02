@@ -16,6 +16,7 @@
 package com.github.markzhai.recyclerview;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -23,6 +24,9 @@ import java.util.List;
 
 import androidx.annotation.LayoutRes;
 import androidx.databinding.DataBindingUtil;
+
+import jamesfchen.widget.R;
+
 
 /**
  * Super simple single-type adapter using data-binding.
@@ -51,7 +55,13 @@ public class SingleTypeAdapter<T> extends BaseViewAdapter<T> {
     @Override
     public BindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new BindingViewHolder(
-                DataBindingUtil.inflate(mLayoutInflater, getLayoutRes(), parent, false));
+                DataBindingUtil.inflate(
+                        LayoutInflater.from(parent.getContext()),
+                        R.layout.view_collapse_text,
+                        parent,
+                        false
+                )
+        );
     }
 
     @Override

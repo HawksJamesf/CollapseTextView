@@ -1,4 +1,4 @@
-package jamesfchen.test
+package jamesfchen.widget
 
 import jamesfchen.widget.carousel.TabsLayout
 

@@ -1,4 +1,4 @@
-package jamesfchen.test;
+package jamesfchen.widget;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.VideoView;
 
-import com.jamesfchen.uicomponent.R;
 
 import java.util.ArrayList;
 import java.util.List;

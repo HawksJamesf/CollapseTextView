@@ -1,4 +1,4 @@
-package com.hawksjamesf.collapsetextview;
+package jamesfchen.widget;
 
 import android.app.Application;
 
@@ -7,6 +7,8 @@ import androidx.core.provider.FontRequest;
 import androidx.emoji.bundled.BundledEmojiCompatConfig;
 import androidx.emoji.text.EmojiCompat;
 import androidx.emoji.text.FontRequestEmojiCompatConfig;
+
+import jamesfchen.widget.R;
 
 /**
  * Copyright ® $ 2017

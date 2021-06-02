@@ -16,12 +16,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.blankj.utilcode.util.ScreenUtils;
-import com.bumptech.glide.Glide;
-import com.jamesfchen.common.util.DimenUtil;
-import com.jamesfchen.common.util.Util;
-import com.jamesfchen.uicomponent.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +23,10 @@ import androidx.annotation.DrawableRes;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
+
+import com.bumptech.glide.Glide;
+import jamesfchen.widget.DimenUtil;
+import jamesfchen.widget.R;
 
 /**
  * Copyright ® $ 2019
@@ -43,7 +41,7 @@ public class TabsLayout extends FrameLayout {
     public static final int HORIZONTAL = LinearLayout.HORIZONTAL;
     public static final int VERTICAL = LinearLayout.VERTICAL;
     private int mOrientation = HORIZONTAL;
-    public static final int GAP = DimenUtil.dp2px(24);
+    public final int GAP = DimenUtil.dp2px(24, this.getContext());
     private int mCurPosition;
     private ValueAnimator mIndicatorAnimator;
 
@@ -106,17 +104,19 @@ public class TabsLayout extends FrameLayout {
 
     public static class TabItem {
         public String name;
-        public Drawable drawable;
+        //        public Drawable drawable;
+        int drawableId;
         public String url;
 
-        public TabItem(String name, Drawable drawable) {
-            this.name = name;
-            this.drawable = drawable;
-        }
+//        public TabItem(String name, Drawable drawable) {
+//            this.name = name;
+//            this.drawable = drawable;
+//        }
 
         public TabItem(String name, @DrawableRes int resId) {
             this.name = name;
-            this.drawable = ContextCompat.getDrawable(Util.getApp(), resId);
+            this.drawableId = resId;
+//            this.drawable = ContextCompat.getDrawable( resId);
         }
 
         public TabItem(String name, String url) {
@@ -148,8 +148,9 @@ public class TabsLayout extends FrameLayout {
             TextView tvName = itemView.findViewById(R.id.tv_name);
             tvName.setText(tabItem.name);
             ImageView ivIcon = itemView.findViewById(R.id.iv_icon);
-            if (tabItem.drawable != null) {
-                ivIcon.setImageDrawable(tabItem.drawable);
+            Drawable d = ContextCompat.getDrawable(getContext(), tabItem.drawableId);
+            if (d != null) {
+                ivIcon.setImageDrawable(d);
             }
 
             if (tabItem.url != null && tabItem.url.length() > 0) {
@@ -172,9 +173,9 @@ public class TabsLayout extends FrameLayout {
                         v.removeOnLayoutChangeListener(this);
                         if (mOrientation == HORIZONTAL) {
                             indicatorLp.width = mLlContainer.getChildAt(0).getWidth();
-                            indicatorLp.height = DimenUtil.dp2px(5);
+                            indicatorLp.height = DimenUtil.dp2px(5, getContext());
                         } else {
-                            indicatorLp.width = DimenUtil.dp2px(5);
+                            indicatorLp.width = DimenUtil.dp2px(5, getContext());
                             indicatorLp.height = mLlContainer.getChildAt(0).getHeight();
                         }
                         mIndicator.setLayoutParams(indicatorLp);
@@ -226,8 +227,8 @@ public class TabsLayout extends FrameLayout {
             endValue = targetLeft;
             property = "translationX";
             int dx = 0;
-            if (targetRight > ScreenUtils.getScreenWidth()) {
-                dx = targetRight - ScreenUtils.getScreenWidth();
+            if (targetRight > DimenUtil.getScreenWidth(getContext())) {
+                dx = targetRight - DimenUtil.getScreenWidth(getContext());
                 //todo:fix bug
 //            } else if (targetLeft < 0) {
 //                dx = targetLeft;
@@ -238,8 +239,8 @@ public class TabsLayout extends FrameLayout {
             endValue = targetTop;
             property = "translationY";
             int dy = 0;
-            if (targetBottom > ScreenUtils.getScreenHeight()) {
-                dy = targetBottom - ScreenUtils.getScreenWidth();
+            if (targetBottom > DimenUtil.getScreenHeight(getContext())) {
+                dy = targetBottom - DimenUtil.getScreenWidth(getContext());
                 //todo:fix bug
 //            } else if (targetLeft < 0) {
 //                dx = targetLeft;

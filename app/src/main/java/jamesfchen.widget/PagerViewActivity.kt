@@ -1,11 +1,9 @@
-package jamesfchen.test
+package jamesfchen.widget
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.jamesfchen.uicomponent.R
 import jamesfchen.widget.carousel.TabsLayout
 import kotlinx.android.synthetic.main.activity_pager_view.*
-import java.util.*
 
 /**
  * Copyright ® $ 2019
@@ -31,7 +29,6 @@ class PagerViewActivity : AppCompatActivity() {
     }
     var pagerviewList: List<PagerViewModel> = object : ArrayList<PagerViewModel>() {
         init {
-
             val tabItem0 = TabsLayout.TabItem("美食", R.drawable.ic_arrow_back_black_24dp)
             val tabItem1 = TabsLayout.TabItem("景点", R.drawable.ic_arrow_back_black_24dp)
             val tabItem2 = TabsLayout.TabItem("购物", R.drawable.ic_arrow_back_black_24dp)
@@ -56,12 +53,12 @@ class PagerViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pager_view)
-
-        val adapter1 = Adapter1()
-        pv_horizontal.setAdapter(adapter1)
-        adapter1.setDataList(pagerviewList)
-        val adapter11 = Adapter11()
-        pv_vertical.setAdapter(adapter11)
-        adapter11.setDataList(pagerviewList)
+//
+//        val adapter1 = Adapter1()
+//        pv_horizontal.setAdapter(adapter1)
+//        adapter1.setDataList(pagerviewList)
+//        val adapter11 = Adapter11()
+//        pv_vertical.setAdapter(adapter11)
+//        adapter11.setDataList(pagerviewList)
     }
 }
